@@ -6,11 +6,12 @@
       Create Account
     </h2>
 
-    <form class="space-y-5">
-
+    <form class="space-y-5" method="POST" action="{{ route('registerAction')}}">
+      @csrf
       <div>
         <label class="block text-gray-400 mb-1">Username</label>
         <input type="text"
+          name="name"
           class="w-full px-4 py-3 bg-gray-800 text-white border border-gray-700 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:outline-none"
           placeholder="Your name">
       </div>
@@ -18,6 +19,7 @@
       <div>
         <label class="block text-gray-400 mb-1">Email</label>
         <input type="email"
+          name="email"
           class="w-full px-4 py-3 bg-gray-800 text-white border border-gray-700 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:outline-none"
           placeholder="email@example.com">
       </div>
@@ -25,6 +27,7 @@
       <div>
         <label class="block text-gray-400 mb-1">Password</label>
         <input type="password"
+          name="password"
           class="w-full px-4 py-3 bg-gray-800 text-white border border-gray-700 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:outline-none"
           placeholder="********">
       </div>
@@ -32,6 +35,7 @@
       <div>
         <label class="block text-gray-400 mb-1">Confirm Password</label>
         <input type="password"
+          name="password_confirmation"
           class="w-full px-4 py-3 bg-gray-800 text-white border border-gray-700 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:outline-none"
           placeholder="********">
       </div>
@@ -45,7 +49,7 @@
 
     <p class="text-center text-gray-400 text-sm mt-6">
       Already have an account?
-      <a href="login.html" class="text-indigo-400 hover:underline">
+      <a href="{{ route('loginPage') }}" class="text-indigo-400 hover:underline">
         Login
       </a>
     </p>

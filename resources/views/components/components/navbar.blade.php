@@ -28,7 +28,21 @@
         </a>
       </li>
       @endguest
+      
       @auth
+     
+      <li class="text-indigo-400 text-sm">
+       Hello {{ Auth::user()->name }}!
+      </li>
+     
+      @if(Auth::user()->role == 'admin')
+           <li>
+        <a href="{{ route('AdminHome')}}"
+           class="px-4 py-2 rounded-lg bg-indigo-600 text-white hover:bg-indigo-700 transition duration-200">
+          Admin
+        </a>
+      </li>
+      @endif
       <li>
         <a href="{{ route('logout')}}"
            class="px-4 py-2 rounded-lg bg-indigo-600 text-white hover:bg-indigo-700 transition duration-200">
