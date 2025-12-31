@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class components.navbar extends Component
+class Admin extends Component
 {
     /**
      * Create a new component instance.
@@ -21,6 +21,6 @@ class components.navbar extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.components.navbar');
+        return view('components.components.admin');
     }
 }

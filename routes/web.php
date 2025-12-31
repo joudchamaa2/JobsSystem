@@ -22,9 +22,8 @@ Route::middleware('auth')->group(function(){
 });
 Route::middleware(['auth','admin'])->group(function(){
     Route::get('/admin/home',[AdminController::class,'home'])->name('AdminHome');
-<<<<<<< HEAD
+
     Route::get('/admin/ManageUsers',[AdminController::class,'ManageUsers'])->name('ManageUsers');
     Route::get('/admin/EditUser/{id}',[AdminController::class,'EditUser'])->name('EditUser');
-=======
->>>>>>> 440385a20b5e6617819db77144ce48a098cc0dfc
+
 });
