@@ -11,12 +11,20 @@
        class="block px-4 py-3 rounded-lg hover:bg-gray-800 transition">
       🏠 Home
     </a>
+<<<<<<< HEAD
     <a href="{{ route('AdminHome') }}"
+=======
+    <a href=""
+>>>>>>> 440385a20b5e6617819db77144ce48a098cc0dfc
        class="block px-4 py-3 rounded-lg hover:bg-gray-800 transition">
       📊 Dashboard
     </a>
 
+<<<<<<< HEAD
     <a href="{{ route('ManageUsers') }}"
+=======
+    <a href="#"
+>>>>>>> 440385a20b5e6617819db77144ce48a098cc0dfc
        class="block px-4 py-3 rounded-lg hover:bg-gray-800 transition">
       👥 Users
     </a>
