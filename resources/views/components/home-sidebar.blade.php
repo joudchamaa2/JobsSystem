@@ -26,6 +26,7 @@
       <a href="#" class="block px-4 py-3 rounded-lg text-gray-300 hover:bg-gray-800">💼 My Posts</a>
       <a href="#" class="block px-4 py-3 rounded-lg text-gray-300 hover:bg-gray-800">⚙️ Settings</a>
       <a href="{{route('NewPost')}}" class="block px-4 py-3 rounded-lg text-gray-300 hover:bg-gray-800">➕ New Post</a>
+      <a href="{{route('NewPost')}}" class="block px-4 py-3 rounded-lg text-gray-300 hover:bg-gray-800">➕ New Post</a>
 
     </nav>
 
