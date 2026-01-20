@@ -22,7 +22,7 @@
 
     <!-- Links -->
     <nav class="space-y-3">
-      <a href="{{route('profilePage',Auth::id())}}" class="block px-4 py-3 rounded-lg text-gray-300 hover:bg-gray-800">👤 Profile</a>
+      <a href="#" class="block px-4 py-3 rounded-lg text-gray-300 hover:bg-gray-800">👤 Profile</a>
       <a href="#" class="block px-4 py-3 rounded-lg text-gray-300 hover:bg-gray-800">💼 My Posts</a>
       <a href="#" class="block px-4 py-3 rounded-lg text-gray-300 hover:bg-gray-800">⚙️ Settings</a>
       <a href="{{route('NewPost')}}" class="block px-4 py-3 rounded-lg text-gray-300 hover:bg-gray-800">➕ New Post</a>
