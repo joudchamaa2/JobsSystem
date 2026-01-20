@@ -21,7 +21,9 @@ Route::middleware('auth')->group(function(){
     Route::get('NewPost',[MainContoller::class,'NewPost'])->name('NewPost');
     Route::get('/logout',[AuthController::class,'logout'])->name('logout');
     Route::get('/home/comments/{id}/GetComment',[MainContoller::class,'GetComment'])->name('GetComment');
-
+    Route::get('/profile/{id}',[MainContoller::class,'profilePage'])->name('profilePage');
+    
+    Route::post('/profile/AddSkills',[MainContoller::class,'AddSkills'])->name('AddSkills');
     Route::post('/home/Comments/{id}/PostComment',[MainContoller::class,'PostComment'])->name('PostComment');
     Route::post('/NewPost',[MainContoller::class,'NewPostAction'])->name('NewPostAction');
 });

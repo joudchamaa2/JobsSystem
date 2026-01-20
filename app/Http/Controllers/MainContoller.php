@@ -7,6 +7,7 @@ use App\Models\Post;
 use App\Models\User;
 use App\Models\Comment;
 use App\Models\ImagePost;
+use App\Models\Skills;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -60,5 +61,17 @@ class MainContoller extends Controller
         ->latest()
         ->get();
         return view('main.home',compact('comment'));
+    }
+    function profilePage(User $id){
+        $user = User::find($id);
+        $count = Post::where('user_id',Auth::id())->count();
+        return view('main.profile',compact('user','count'));
+    }
+    function AddSkills(Request $request){
+       $fields = $request->validate([
+        'skil'=>['required','string','max:10'],
+       ]);
+       Skills::create($fields);
+       return back()->with('success','skills added successfuly');
     }
 }
