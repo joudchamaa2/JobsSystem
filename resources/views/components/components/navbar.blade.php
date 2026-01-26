@@ -11,7 +11,7 @@
       
       @guest
       <li>
-        <a href="{{ route('loginPage')}}"
+        <a href="{{ route('login')}}"
            class="hover:text-indigo-400 transition duration-200">
           Login
         </a>
@@ -43,6 +43,15 @@
         </a>
       </li>
       @endif
+       @if(Auth::user()->role == 'employer' || Auth::user()->role == 'admin')
+           <li>
+        <a href="{{ route('EmployeeHome')}}"
+           class="px-4 py-2 rounded-lg bg-indigo-600 text-white hover:bg-indigo-700 transition duration-200">
+          Employee
+        </a>
+      </li>
+      @endif
+
       <li>
         <a href="{{ route('logout')}}"
            class="px-4 py-2 rounded-lg bg-indigo-600 text-white hover:bg-indigo-700 transition duration-200">

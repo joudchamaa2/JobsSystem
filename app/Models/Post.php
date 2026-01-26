@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Post extends Model
 {
-    use SoftDeletes;
     protected $fillable = [
         'title',
         'description',
@@ -21,5 +20,8 @@ class Post extends Model
     }
     public function Comment(){
         return $this->hasMany(Comment::class);
+    }
+    public function Like(){
+        return $this->hasMany(Like::class);
     }
 }

@@ -42,7 +42,7 @@
                     </td>
 
                     <td class="px-6 py-5 text-gray-400 text-sm">
-                        {{$p->created_at}}
+                        {{$p->created_at->format('d M Y')}}
                     </td>
 
                     <td class="px-6 py-5">

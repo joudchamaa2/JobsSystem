@@ -35,7 +35,7 @@
 
     <p class="text-center text-gray-400 text-sm mt-6">
       Don’t have an account?
-      <a href="register.html" class="text-indigo-400 hover:underline">
+      <a href="{{route('registerPage')}}" class="text-indigo-400 hover:underline">
         Register
       </a>
     </p>

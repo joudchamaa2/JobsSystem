@@ -33,7 +33,7 @@
             <!-- Meta -->
             <div class="flex flex-wrap gap-6 text-sm text-gray-400">
                 <span>{{$p->user->name}}</span>
-                <span>📅 {{$p->created_at}}</span>
+                <span>📅 {{$p->created_at->format('d M Y')}}</span>
                 <span class="px-3 py-1 bg-indigo-600/20 text-indigo-400 rounded-full">
                     Job Post
                 </span>

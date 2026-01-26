@@ -5,13 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Skills extends Model
+class AdminSkill extends Model
 {
     use SoftDeletes;
     protected $fillable = [
-        'skil',
+        'skill_name',
     ];
-    public function users(){
-        return $this->belongsToMany(User::class);
-    }
 }

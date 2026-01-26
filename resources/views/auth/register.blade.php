@@ -49,7 +49,7 @@
 
     <p class="text-center text-gray-400 text-sm mt-6">
       Already have an account?
-      <a href="{{ route('loginPage') }}" class="text-indigo-400 hover:underline">
+      <a href="{{ route('login') }}" class="text-indigo-400 hover:underline">
         Login
       </a>
     </p>

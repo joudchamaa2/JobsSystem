@@ -7,6 +7,12 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use App\Models\Skill;
+use App\Models\Post;
+use App\Models\Comment;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class User extends Authenticatable
 {
@@ -22,6 +28,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'profile_image',
+        'about',
     ];
 
     /**
@@ -46,10 +54,25 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
-    public function posts(){
+    public function posts(): HasMany{
         return $this->hasMany(Post::class);
     }
-    public function Comment(){
+    public function Comment(): HasMany{
         return $this->hasMany(Comment::class);
+    }
+    public function skills(): HasMany{
+        return $this->hasMany(Skill::class);
+    }
+    public function jobs (){
+        return $this->belongsToMany(Ejobs::class,'ejob_user','user_id','ejob_id');
+    }
+    public function applications(): HasMany{
+        return $this->hasMany(Application::class);
+    }
+    public function prenium(): HasOne{
+        return $this->hasOne(Prenium::class);
+    }
+    public function likes() :HasMany{
+        return $this->hasMany(Like::class);
     }
 }

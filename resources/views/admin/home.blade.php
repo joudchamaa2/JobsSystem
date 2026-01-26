@@ -18,8 +18,8 @@
     </div>
 
     <div class="bg-gray-900 border border-gray-800 rounded-xl p-6">
-      <p class="text-gray-400 text-sm">Comments</p>
-      <h2 class="text-3xl font-bold text-white">4,876</h2>
+      <p class="text-gray-400 text-sm">Jobs</p>
+      <h2 class="text-3xl font-bold text-white">{{$jobs}}</h2>
     </div>
 
 

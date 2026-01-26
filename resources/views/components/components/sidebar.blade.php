@@ -30,9 +30,17 @@
       📝 Posts
     </a>
 
-    <a href="#"
+    <a href="{{ route('AddSkillPage')}}"
        class="block px-4 py-3 rounded-lg hover:bg-gray-800 transition">
-      💬 Comments
+     ➕ Add Skills
+    </a>
+    <a href="{{ route('ApplicationPage')}}"
+       class="block px-4 py-3 rounded-lg hover:bg-gray-800 transition">
+     📄 Applications
+    </a>
+    <a href="{{ route('AllJobsPage')}}"
+       class="block px-4 py-3 rounded-lg hover:bg-gray-800 transition">
+     📄 All Jobs
     </a>
 
   </nav>

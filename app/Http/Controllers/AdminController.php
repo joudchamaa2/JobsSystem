@@ -6,6 +6,9 @@ use App\Models\Post;
 
 
 use App\Models\User;
+use App\Models\AdminSkill;
+use App\Models\Application;
+use App\Models\Ejobs;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -14,7 +17,8 @@ class AdminController extends Controller
     function home(){
         $user = User::count('id');
         $post = Post::count('id');
-        return view('admin.home',compact('user','post'));
+        $jobs = Ejobs::count('id');
+        return view('admin.home',compact('user','post','jobs'));
     }
 
     function ManageUsers(){
@@ -73,5 +77,29 @@ class AdminController extends Controller
         $id->delete();
         return redirect()->route('ManagePost')->with('success','Post Deleted Successfully');
     }
+    function AddSkillPage(){
+        $skills = AdminSkill::all();
+        return view('admin.AddSkill',compact('skills'));
+    }
+    function AddSkill(Request $request){
+        $fields = $request->validate([
+            'skill_name'=>['required','string','max:50'],
+        ]);
+        AdminSkill::create($fields);
+        return redirect()->back()->with('success','Skill added successfully');
+    }
+    function ApplicationPage(){
+        $application = Application::with(['user','ejob'])->get();
+        return view('admin.Application',compact('application'));
+    }
+    function AllJobsPage(){
+        $jobs = Ejobs::ALL();
+        return view('admin.Jobs',compact('jobs'));
+    }
+    function DeleteJob(Ejobs $id){
+        $id->delete();
+        return redirect()->route('AllJobsPage')->with('success','Job Deleted Successfully');
+    }
+    
 
 }
